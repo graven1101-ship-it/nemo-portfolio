@@ -66,7 +66,7 @@ function TubelightLinks({ activeTab, setActiveTab, onNav }) {
   );
 }
 
-/* ── Logo: LN default → LAMINE NEGGAZI on hover with TextScramble ── */
+/* ── Logo: RG default → RAVEN VINCENT GUTIERREZ on hover with TextScramble ── */
 function LogoExpand({ onClick }) {
   const [hovered, setHovered] = useState(false);
   const [scrambleTrigger, setScrambleTrigger] = useState(false);
@@ -94,9 +94,7 @@ function LogoExpand({ onClick }) {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}>
       <a href="#home" className="topnav__logo-anchor" onClick={onClick}>
-
-        {/* ── LAMINE group: L always visible, AMINE expands ── */}
-        {/* L — slightly muted */}
+        {/* R — always visible */}
         <TextScramble
           as="span"
           className="topnav__logo-l"
@@ -105,14 +103,14 @@ function LogoExpand({ onClick }) {
           duration={0.5}
           onScrambleComplete={() => setScrambleTrigger(false)}
         >
-          L
+          R
         </TextScramble>
 
-        {/* AMINE — slides in on hover with scramble */}
+        {/* AVEN — slides in on hover */}
         <span className="topnav__logo-overflow">
           <AnimatePresence>
             {hovered && (
-              <motion.span key="amine" className="topnav__logo-amine"
+              <motion.span key="aven" className="topnav__logo-amine"
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: 'auto', opacity: 1 }}
                 exit={{ width: 0, opacity: 0 }}
@@ -128,7 +126,7 @@ function LogoExpand({ onClick }) {
                     speed={0.025}
                     duration={0.55}
                   >
-                    AMINE
+                    AVEN
                   </TextScramble>
                 </motion.span>
               </motion.span>
@@ -136,16 +134,38 @@ function LogoExpand({ onClick }) {
           </AnimatePresence>
         </span>
 
-        {/* spacer */}
+        {/* VINCENT — slides in before the surname */}
         <AnimatePresence>
           {hovered && (
-            <motion.span key="sp" style={{ display: 'inline-block', flexShrink: 0 }}
-              initial={{ width: 0 }} animate={{ width: 11 }} exit={{ width: 0 }}
-              transition={{ duration: 0.32 }} />
+            <motion.span
+              key="vincent"
+              style={{ display: 'inline-flex', flexShrink: 0, overflow: 'hidden' }}
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: 'auto', opacity: 1 }}
+              exit={{ width: 0, opacity: 0 }}
+              transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1], delay: 0.04 }}
+            >
+              <motion.span
+                style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
+                initial={{ x: -14, skewX: -8 }}
+                animate={{ x: 0, skewX: 0 }}
+                exit={{ x: -14, skewX: -8 }}
+                transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1], delay: 0.04 }}
+              >
+                <TextScramble
+                  as="span"
+                  trigger={scrambleTrigger}
+                  speed={0.025}
+                  duration={0.55}
+                >
+                  &nbsp;VINCENT&nbsp;
+                </TextScramble>
+              </motion.span>
+            </motion.span>
           )}
         </AnimatePresence>
 
-        {/* ── NEGGAZI group: N always visible, EGGAZI expands ── */}
+        {/* G — always visible */}
         <TextScramble
           as="span"
           className="topnav__logo-n"
@@ -153,13 +173,14 @@ function LogoExpand({ onClick }) {
           speed={0.03}
           duration={0.5}
         >
-          N
+          G
         </TextScramble>
 
+        {/* UTIERREZ — slides in on hover */}
         <span className="topnav__logo-overflow">
           <AnimatePresence>
             {hovered && (
-              <motion.span key="eggazi" className="topnav__logo-eggazi"
+              <motion.span key="utierrez" className="topnav__logo-eggazi"
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: 'auto', opacity: 1 }}
                 exit={{ width: 0, opacity: 0 }}
@@ -175,7 +196,7 @@ function LogoExpand({ onClick }) {
                     speed={0.025}
                     duration={0.55}
                   >
-                    EGGAZI
+                    UTIERREZ
                   </TextScramble>
                 </motion.span>
               </motion.span>

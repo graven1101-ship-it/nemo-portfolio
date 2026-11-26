@@ -53,7 +53,7 @@ export default function LoadingScreen({ onDone }) {
 
           <div className="loader__center">
             <div className="loader__name-wrap">
-              {/* LAMINE with shimmer + stars */}
+              {/* RAVEN with shimmer + stars */}
               <motion.span
                 className="loader__name-first-wrap"
                 initial={{ opacity: 0, y: 40, skewY: 5 }}
@@ -79,7 +79,7 @@ export default function LoadingScreen({ onDone }) {
                     </svg>
                   </span>
                 ))}
-                <span className="loader__name-first">LAMINE</span>
+                <span className="loader__name-first">RAVEN</span>
               </motion.span>
 
               <motion.span
@@ -88,7 +88,7 @@ export default function LoadingScreen({ onDone }) {
                 animate={{ opacity: 1, y: 0, skewY: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
               >
-                NEGGAZI
+                GUTIERREZ
               </motion.span>
             </div>
 

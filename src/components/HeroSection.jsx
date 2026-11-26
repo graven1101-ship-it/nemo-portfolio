@@ -77,7 +77,7 @@ function LamineName() {
         characterSet="ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*"
         onScrambleComplete={() => setTrigger(false)}
       >
-        LAMINE
+        RAVEN
       </TextScramble>
     </span>
   );
@@ -102,7 +102,7 @@ function NeggaziName() {
       characterSet="ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*"
       onScrambleComplete={() => setTrigger(false)}
     >
-      NEGGAZI
+      VINCENT GUTIERREZ
     </TextScramble>
   );
 }
